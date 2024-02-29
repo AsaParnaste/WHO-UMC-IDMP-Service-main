@@ -1,0 +1,137 @@
+{
+  "resourceType": "AdministrableProductDefinition",
+  "id": "6C4563BB76BE7967594979196EC91CD8",
+  "meta": {
+    "profile": [
+      "http://www.who-umc.org/idmp/StructureDefinition/AdministrableProductDefinition-who-php"
+    ]
+  },
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Pharmaceutical Product (Administrable Product Definition)</h1><table><tr><td style=\"font-weight: bold;\">Id</td><td>6C4563BB76BE7967594979196EC91CD8</td></tr><tr><td style=\"font-weight: bold;\">Level</td><td>3</td></tr></table><h2>Ingredients</h2><table><th>Substance</th><th>Strength</th><tr><td>METHOTREXATE SODIUM</td><td></td></tr></table><h2>Form</h2><table><tr><td style=\"font-weight: bold;\">Basic dose form</td><td>Tablet (0069)</td></tr><tr><td style=\"font-weight: bold;\">Administration method</td><td>Swallowing (0019)</td></tr><tr><td style=\"font-weight: bold;\">Intended site</td><td>Oral (0031)</td></tr><tr><td style=\"font-weight: bold;\">Release characteristics</td><td>Conventional (0047)</td></tr></table></div>"
+  },
+  "contained": [
+    {
+      "resourceType": "Ingredient",
+      "id": "a289cef1-2848-47fc-af5f-79139328cc31",
+      "meta": {
+        "profile": [
+          "http://www.who-umc.org/idmp/StructureDefinition/Ingredient-who-php-publish"
+        ]
+      },
+      "status": "active",
+      "for": [
+        {
+          "reference": "#"
+        }
+      ],
+      "role": {
+        "coding": [
+          {
+            "system": "http://hl7.org/fhir/ingredient-role",
+            "code": "100000072072"
+          }
+        ],
+        "text": "Active"
+      },
+      "substance": {
+        "code": {
+          "reference": {
+            "reference": "SubstanceDefinition/GSID9XBS2KCF3K1Z1",
+            "display": "METHOTREXATE SODIUM"
+          }
+        }
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://www.who-umc.org/idmp/StructureDefinition/parent-phpid",
+      "valueReference": {
+        "reference": "AdministrableProductDefinition/93FE88350C2E8868F7E8BD220C4E0010",
+        "identifier": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://www.who-umc.org/idmp/CodeSystem/php-level",
+                "code": "PhPIDLevel1"
+              }
+            ]
+          },
+          "system": "http://www.who-umc.org/idmp/phpid",
+          "value": "93FE88350C2E8868F7E8BD220C4E0010"
+        }
+      }
+    },
+    {
+      "url": "http://www.who-umc.org/idmp/StructureDefinition/basic-dose-form",
+      "valueCoding": {
+        "system": "https://standardterms.edqm.eu",
+        "code": "0069",
+        "display": "Tablet"
+      }
+    },
+    {
+      "url": "http://www.who-umc.org/idmp/StructureDefinition/administration-method",
+      "valueCoding": {
+        "system": "https://standardterms.edqm.eu",
+        "code": "0019",
+        "display": "Swallowing"
+      }
+    },
+    {
+      "url": "http://www.who-umc.org/idmp/StructureDefinition/intended-site",
+      "valueCoding": {
+        "system": "https://standardterms.edqm.eu",
+        "code": "0031",
+        "display": "Oral"
+      }
+    },
+    {
+      "url": "http://www.who-umc.org/idmp/StructureDefinition/release-characteristics",
+      "valueCoding": {
+        "system": "https://standardterms.edqm.eu",
+        "code": "0047",
+        "display": "Conventional"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://www.who-umc.org/idmp/CodeSystem/php-level",
+            "code": "PhPIDLevel3"
+          }
+        ]
+      },
+      "system": "http://www.who-umc.org/idmp/phpid",
+      "value": "6C4563BB76BE7967594979196EC91CD8"
+    }
+  ],
+  "status": "active",
+  "formOf": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+          "valueCode": "unsupported"
+        }
+      ],
+      "display": "Unsupported"
+    }
+  ],
+  "routeOfAdministration": [
+    {
+      "code": {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode": "not-applicable"
+          }
+        ]
+      }
+    }
+  ]
+}

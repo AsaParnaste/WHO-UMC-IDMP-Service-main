@@ -1,0 +1,143 @@
+
+# ╭──────────────────────────────ImplementationGuide-gatekeeper.json───────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see:                                                                    │
+# │  http://build.fhir.org/ig/HL7/fhir-shorthand/branches/beta/sushi.html#ig-development           │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: who-umc.fhir.poc-php
+canonical: http://www.who-umc.org/idmp
+version: 0.3.0
+name: WhoUmcIDMPManagement
+title: WHO-UMC IDMP Management and Publish API 
+status: active
+publisher:
+  name: Uppsala Monitoring Centre
+  url: http://www.who-umc.org
+contact:
+  - name: Uppsala Monitoring Centre
+    telecom:
+      - system: url
+        value: http://www.who-umc.org
+
+description: The WHO-UMC API supports management and publishing of PhPIDs and GSIDs as part of the ISO IDMP standard
+jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World" # https://www.hl7.org/fhir/valueset-jurisdiction.html
+license: CC0-1.0
+fhirVersion: 5.0.0
+# dependencies:
+#   hl7.fhir.uv.ips: current
+parameters:
+  # show-inherited-invariants: false
+  produce-jekyll-data: true
+  special-url:
+  - http://www.who-umc.org/idmp/StructureDefinition/parent-phpid
+  - http://www.who-umc.org/idmp/StructureDefinition/pdfCharacteristics
+copyrightYear: 2024+
+releaseLabel: CI Build
+
+instanceOptions:
+  manualSliceOrdering: true
+
+
+FSHOnly: false
+
+pages:
+  index.md:
+    title: WHO-UMC IDMP Management and Publish API   
+  background.md:
+    title: Background
+  operatingModel.md:
+    title: Operating model   
+  phpIdRequest.md:
+    title: PhPID (AdministrableProductDefinition) request   
+  substanceRequest.md:
+    title: GSID (Substance) request   
+  authentication.md:
+    title: Authentication
+  profiles.md:
+    title: Profiles
+  terminologies.md:
+    title: Terminologies
+  versioning.md:
+    title: Versioning
+  downloads.html:
+    title: Useful downloads
+  changes.html:
+    title: IG change history
+		
+menu:
+  IG Home: index.html
+  Background: background.html
+  Requesting PhP and GSIDs:
+    Operating model: operatingModel.html
+    PhPID request: phpIdRequest.html
+    GSID request: substanceRequest.html
+  Authentication: authentication.html
+  # Specifications:
+  #   Profiles: profiles.html
+  #   Terminology: terminologies.html
+  Table of Contents: toc.html
+  Artifact Index: artifacts.html			
+  Support:
+    FHIR Spec: new-tab http://hl7.org/fhir/R5/index.html
+    API With tutorial and examples: new-tab https://umc-ext-dev-phponfhirdemo-preview-rg01-webapp.azurewebsites.net/
+    Downloads: downloads.html
+
+
+# The resources property corresponds to IG.definition.resource.
+# SUSHI can auto-generate all of the resource entries based on
+# the FSH definitions and/or information in any user-provided
+# JSON or XML resource files. If the generated entries are not
+# sufficient or complete, however, the author can add entries
+# here. If the reference matches a generated entry, it will
+# replace the generated entry. If it doesn't match any generated
+# entries, it will be added to the generated entries. The format
+# follows IG.definition.resource with the following differences:
+#   * use IG.definition.resource.reference.reference as the YAML key.
+#   * if the key is an id or name, SUSHI will replace it with the
+#     correct URL when generating the IG JSON.
+#   * specify "omit" to omit a FSH-generated resource from the
+#     resource list.
+#   * if the exampleCanonical is an id or name, SUSHI will replace
+#     it with the correct canonical when generating the IG JSON.
+#   * groupingId can be used, but top-level groups syntax may be a
+#     better option (see below).
+# The following are simple examples to demonstrate what this might
+# look like:
+
+resources:
+  Task/template-generated-by-server-gsid-req:
+    name: Task to request a new GSID
+    description: A template for how a Task that is used to request a new GSID (SubstanceDefinition) can be structured.
+  Task/template-generated-by-server-phpid-req:
+    name: Task to request a new PhPID
+    description: A template for how a Task that is used to request a new PhPID (AdministrableProductDefinition) can be structured.
+  Task/UK-emc-00001:
+    name: Task example from DataPharm (UK)
+    description: An example developed by DataPharm while testing PhPID request API.  
+  Task/Task-Felleskatalogen-CPOD-MPD-1:
+    name: Task example from Felleskatalogen (NO)
+    description: An example developed by Felleskatalogen while testing PhPID request API.      
+  AdministrableProductDefinition/91B3CA582581F57E4092F13AAF476215:
+    name: AdministrableProductDefinition level 4
+    description: Example of AdministrableProductDefinition returned by the server on level 4.
+  AdministrableProductDefinition/6C4563BB76BE7967594979196EC91CD8:
+    name: AdministrableProductDefinition level 3
+    description: AdministrableProductDefinition on level 3. Linked from a level 4 APD.
+  AdministrableProductDefinition/8195D4AF1287CCE3442C2F308F61DBBC:
+    name: AdministrableProductDefinition level 2
+    description: AdministrableProductDefinition on level 2. Linked from a level 4 APD.
+  AdministrableProductDefinition/93FE88350C2E8868F7E8BD220C4E0010:
+    name: AdministrableProductDefinition level 1
+    description: AdministrableProductDefinition on level 1. Linked from a level 4, 3 and 2 APD.
+  SubstanceDefinition/GSID23G92UMX93H45:
+    name: Substance (METHOTREXATE)
+    description: An example of a GSID publisehed as a SubstanceDefinition  
+  SubstanceDefinition/GSID9XBS2KCF3K1Z1:
+    name: Substance (METHOTREXATE SODIUM)
+    description: An example of a GSID (salt variant) publisehed as a SubstanceDefinition  
+  SubstanceDefinition/GSID85RFP2XGF3X29:
+    name: Substance (OMEPRAZOLE)
+    description: An example of a GSID publisehed as a SubstanceDefinition  
+  MedicinalProductDefinition/1266520E021:
+    name: MedicinalProductDefinition (Methotrexaat sandoz)
+    description: Example of a WHODrug product publised as a MedicinalProductDefinition.
